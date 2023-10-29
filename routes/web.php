@@ -20,21 +20,28 @@ use LevelUp\Experience\Facades\LeaderBoard;
 Route::get('/', function () {
     //$addLevel = Level::add(['level' => 1, 'next_level_experience' => null], ['level' => 2, 'next_level_experience' => 100], ['level' => 3, 'next_level_experience' => 250]);
     //return view('welcome');
-    $user = User::find(1);
-    $setExp = $user->setPoints(90);
-    $getPoints = $user->getPoints();
-    $getLevel = $user->getLevel();
-    $getNextLevel = $user->nextLevelAt();
-    dump($getPoints);
-    dump($getLevel);
-    dump($getNextLevel);
+    // $user = User::find(1);
+    // $setExp = $user->setPoints(90);
+    // $getPoints = $user->getPoints();
+    // $getLevel = $user->getLevel();
+    // $getNextLevel = $user->nextLevelAt();
+    // dump($getPoints);
+    // dump($getLevel);
+    // dump($getNextLevel);
 
-    $giveExp = $user->addPoints(10);
-    $getPoints = $user->getPoints();
-    $getLevel = $user->getLevel();
-    $getNextLevel = $user->nextLevelAt();
+    // $giveExp = $user->addPoints(10);
+    // $getPoints = $user->getPoints();
+    // $getLevel = $user->getLevel();
+    // $getNextLevel = $user->nextLevelAt();
 
-    dump($getPoints);
-    dump($getLevel);
-    dump($getNextLevel);
+    // dump($getPoints);
+    // dump($getLevel);
+    // dump($getNextLevel);
+    $createAchievement = Achievement::create([
+        'name' => 'CAP Niveau 20',
+        'is_secret' => false,
+        'description' => "Quand l'utilisateur atteint le niveau 20",
+        'image' => 'https://img.icons8.com/?size=256&id=41615&format=png 1x, https://img.icons8.com/?size=512&id=41615&format=png 2x'
+]);
+dump($createAchievement);
 });
