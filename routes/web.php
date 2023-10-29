@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
+use LevelUp\Experience\Models\Level;
+use LevelUp\Experience\Models\Achievement;
+use LevelUp\Experience\Facades\LeaderBoard;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +18,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $addLevel = Level::add(['level' => 1, 'next_level_experience' => null], ['level' => 2, 'next_level_experience' => 100], ['level' => 3, 'next_level_experience' => 250]);
+    //return view('welcome');
 });
