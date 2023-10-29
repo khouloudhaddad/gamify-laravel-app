@@ -18,6 +18,25 @@ use LevelUp\Experience\Facades\LeaderBoard;
 */
 
 Route::get('/', function () {
-    $addLevel = Level::add(['level' => 1, 'next_level_experience' => null], ['level' => 2, 'next_level_experience' => 100], ['level' => 3, 'next_level_experience' => 250]);
+    //$addLevel = Level::add(['level' => 1, 'next_level_experience' => null], ['level' => 2, 'next_level_experience' => 100], ['level' => 3, 'next_level_experience' => 250]);
     //return view('welcome');
+    $user = User::find(1);
+    $giveExp = $user->addPoints(1);
+    dump($giveExp);
+    // $setExp = $user->setPoints(90);
+    // $getPoints = $user->getPoints();
+    // $getLevel = $user->getLevel();
+    // $getNextLevel = $user->nextLevelAt();
+    // dump($getPoints);
+    // dump($getLevel);
+    // dump($getNextLevel);
+
+    // $giveExp = $user->addPoints(10);
+    // $getPoints = $user->getPoints();
+    // $getLevel = $user->getLevel();
+    // $getNextLevel = $user->nextLevelAt();
+
+    // dump($getPoints);
+    // dump($getLevel);
+    // dump($getNextLevel);
 });
