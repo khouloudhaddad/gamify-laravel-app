@@ -37,11 +37,15 @@ Route::get('/', function () {
     // dump($getPoints);
     // dump($getLevel);
     // dump($getNextLevel);
-    $createAchievement = Achievement::create([
-        'name' => 'CAP Niveau 20',
-        'is_secret' => false,
-        'description' => "Quand l'utilisateur atteint le niveau 20",
-        'image' => 'https://img.icons8.com/?size=256&id=41615&format=png 1x, https://img.icons8.com/?size=512&id=41615&format=png 2x'
-]);
-dump($createAchievement);
+    // $createAchievement = Achievement::create([
+    //     'name' => 'CAP Niveau 20',
+    //     'is_secret' => false,
+    //     'description' => "Quand l'utilisateur atteint le niveau 20",
+    //     'image' => 'https://img.icons8.com/?size=256&id=41615&format=png 1x, https://img.icons8.com/?size=512&id=41615&format=png 2x',
+    // ]);
+    // dump($createAchievement);
+
+    $achievement = Achievement::find(1);
+    $grantAchievement = $user->grantAchievement($achievement);
+    dump($grantAchievement);
 });
