@@ -46,6 +46,9 @@ Route::get('/', function () {
     // dump($createAchievement);
 
     $achievement = Achievement::find(1);
-    $grantAchievement = $user->grantAchievement($achievement);
+    $grantAchievement = $user->grantAchievement(
+        achievement: $achievement,
+        progress: 100
+    );
     dump($grantAchievement);
 });
